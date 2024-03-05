@@ -8,13 +8,14 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 @RestController
-public class StupidController {
+public class CallGoogleController {
 
-    @GetMapping("/stupid")
-    public String stupid() throws IOException {
-        URL url = new URL("http://localhost:8080/another");
+    @GetMapping("/callgoogle")
+    public String callGoogle() throws IOException  {
+       URL url = new URL("https://www.google.com");
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        System.out.println("Inside callGoogle");
         System.out.println(con.getContent().toString());
-        return "stupid";
+        return "callGoogle";
     }
 }
